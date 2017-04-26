@@ -3,7 +3,7 @@ A tool used to detect botnet based on existing P2P botnet packet dataset and hea
 
 * Extract features with [Tshark](https://linux.die.net/man/1/tshark) and [numpy](http://www.numpy.org/)
 * Train and generate result with [sklearn extraTreesClassifier](http://scikit-learn.org/stable/modules/generated/sklearn.ensemble.ExtraTreesClassifier.html)
-* High correction rate of 99%
+* High true rate of 99%
 
 ## To use this tool
 
