@@ -8,5 +8,5 @@ A tool used to detect botnet based on existing P2P botnet packet dataset and hea
 ## To use this tool
 
 1. Put a healthy pcap dataset and a botnet/suspicious pcap dataset in root
-2. Modify `all.sh`, in the fourth line, change second and third parameters into `healthy pcap filename`+`.features.csv` and `pcap filename`+`.features.csv`
+2. Modify `all.sh`, in the fourth line, change second and third parameters into `healthy pcap filename`+`.features.csv` and `malicious pcap filename`+`.features.csv`. In my program, I use half total data to train and anothor half to test. You can modify the ratio on your own.
 3. In the terminal, use command `. all.sh`
