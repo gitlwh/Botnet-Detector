@@ -34,13 +34,31 @@ np.reshape(pred_label_test,(-1,1))
 testingStandardData = open("testStandard.csv")
 true = 0
 false = 0
+fp = 0
+fn = 0
+tp = 0
+tn = 0
 n = 0
 for line in testingStandardData.readlines():
-	print pred_label_test[n], line
+	#print pred_label_test[n], line
+	if pred_label_test[n]==0 and int(line.strip().split(',')[-1])==1:
+		fp+=1
+	if pred_label_test[n]==1 and int(line.strip().split(',')[-1])==0:
+		fn+=1
+	if pred_label_test[n]==0 and int(line.strip().split(',')[-1])==0:
+		tn+=1
+	if pred_label_test[n]==1 and int(line.strip().split(',')[-1])==1:
+		tp+=1
+
 	if pred_label_test[n]==int(line.strip().split(',')[-1]):
 		true += 1
 	else:
 		false += 1
 	n += 1
 
-print "true"+str(true)+";false"+str(false)+"ratio:"+str(float(true)/(false+true))
+print "true"+str(true)+";false"+str(false)+"ratio:"+str(float(true)/(false+true))+' '+"fp"+' '+str(fp)+' '+str(float(fp)/n)+' '+'fn'+' '+str(fn)+' '+str(float(fn)/n)+' '+'tn'+' '+str(tn)+' '+str(float(tn)/n)+' '+'tp'+' '+str(tp)+' '+str(float(tp)/n)
+
+
+
+
+
